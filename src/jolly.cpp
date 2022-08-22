@@ -1,6 +1,6 @@
 #include "jolly.h"
 
-/** Read file into string. */
+/** Read file into string */
 std::string slurp (const std::string& path) {
   std::ostringstream buf; 
   std::ifstream input (path.c_str()); 
@@ -8,21 +8,21 @@ std::string slurp (const std::string& path) {
   return buf.str();
 }
 
-// trim from start (in place)
+/** Trim from start (in place) */
 void ltrim(std::string &s) {
     s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {
         return !std::isspace(ch);
     }));
 }
 
-// trim from end (in place)
+/** Trim from end (in place) */
 void rtrim(std::string &s) {
     s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
         return !std::isspace(ch);
     }).base(), s.end());
 }
 
-// trim from both ends (in place)
+/* Trim from both ends (in place) */
 void trim(std::string &s) {
     ltrim(s);
     rtrim(s);
