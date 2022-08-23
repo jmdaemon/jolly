@@ -15,4 +15,5 @@ std::string trim(std::string &s);
 std::string unquote(std::string &s);
 std::string substitute(std::string str, const std::string& from, const std::string& to);
 
+constexpr unsigned int shash(const char *s, int off);
 #endif // JOLLY_H
