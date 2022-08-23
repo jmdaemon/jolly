@@ -22,9 +22,14 @@ void rtrim(std::string &s) {
     }).base(), s.end());
 }
 
-/* Trim from both ends (in place) */
+/** Trim from both ends (in place) */
 void trim(std::string &s) {
     ltrim(s);
     rtrim(s);
 }
 
+/** Removes quotes in a string */
+std::string unquote(std::string s) {
+  s.erase(remove( s.begin(), s.end(), '\"' ),s.end());
+  return s;
+}
