@@ -33,7 +33,6 @@ else()
 endif()
 
 # Include dependencies
-
 # CMake modules
 include(FetchContent)
 include(Utilities)
@@ -45,7 +44,7 @@ set(INCLUDES_DIR "${PROJECT_SOURCE_DIR}/include")
 # Add subdirectories
 add_subdirectory(src)
 
-if(BUILD_TESTING)
+if (BUILD_TESTING AND NOT USE_AS_SUBPROJECT)
     include(doctest)
     include(MakeTests)
     include(CTest)
