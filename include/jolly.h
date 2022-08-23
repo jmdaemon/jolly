@@ -13,5 +13,6 @@ std::string ltrim(std::string &s);
 std::string rtrim(std::string &s);
 std::string trim(std::string &s);
 std::string unquote(std::string &s);
+std::string substitute(std::string str, const std::string& from, const std::string& to);
 
 #endif // JOLLY_H
