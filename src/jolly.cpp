@@ -1,4 +1,5 @@
 #include "jolly.h"
+#include <iostream>
 
 /** Read file into string */
 std::string slurp (const std::string& path) {
@@ -50,4 +51,13 @@ std::string substitute(std::string str, const std::string& from, const std::stri
   Useful in match/case statements to match with strings */
 constexpr unsigned int shash(const char *s, int off) {
     return !s[off] ? 5381 : (shash(s, off+1)*33) ^ s[off];
+}
+
+/** Prompts a user for input from the command line */
+std::string prompt(std::string prompt) {
+  std::string input = "";
+  std::cout << prompt;
+  while (std::getline(std::cin, input))
+    return input;
+  return input;
 }
