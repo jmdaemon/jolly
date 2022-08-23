@@ -8,28 +8,30 @@ std::string slurp (const std::string& path) {
   return buf.str();
 }
 
-/** Trim from start (in place) */
-void ltrim(std::string &s) {
+/** Trim from start */
+std::string ltrim(std::string &s) {
     s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {
         return !std::isspace(ch);
     }));
+    return s;
 }
 
-/** Trim from end (in place) */
-void rtrim(std::string &s) {
+/** Trim from end */
+std::string rtrim(std::string &s) {
     s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
         return !std::isspace(ch);
     }).base(), s.end());
+    return s;
 }
 
-/** Trim from both ends (in place) */
-void trim(std::string &s) {
-    ltrim(s);
-    rtrim(s);
+/** Trim from both ends */
+std::string trim(std::string &s) {
+  auto stripped = ltrim(s);
+  return(rtrim(stripped));
 }
 
 /** Removes quotes in a string */
-std::string unquote(std::string s) {
+std::string unquote(std::string &s) {
   s.erase(remove( s.begin(), s.end(), '\"' ),s.end());
   return s;
 }

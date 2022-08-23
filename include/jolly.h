@@ -9,9 +9,9 @@
 
 // Strings
 std::string slurp (const std::string& path);
-void ltrim(std::string &s);
-void rtrim(std::string &s);
-void trim(std::string &s);
-std::string unquote(std::string s);
+std::string ltrim(std::string &s);
+std::string rtrim(std::string &s);
+std::string trim(std::string &s);
+std::string unquote(std::string &s);
 
 #endif // JOLLY_H
