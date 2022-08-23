@@ -47,12 +47,6 @@ std::string substitute(std::string str, const std::string& from, const std::stri
   return str;
 }
 
-/** Generate a string hash
-  Useful in match/case statements to match with strings */
-constexpr unsigned int shash(const char *s, int off) {
-    return !s[off] ? 5381 : (shash(s, off+1)*33) ^ s[off];
-}
-
 /** Prompts a user for input from the command line */
 std::string prompt(std::string prompt) {
   std::string input = "";
