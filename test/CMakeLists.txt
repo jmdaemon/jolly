@@ -6,8 +6,8 @@ set(TARGET jolly)
 set(TEST_NAME test-${TARGET})
 add_executable(${TEST_NAME} test_jolly.cpp)
 target_include_directories(${TEST_NAME} PUBLIC ${HEADERS})
-target_link_libraries(${TEST_NAME} PRIVATE ${PKG_DEPENDS} doctest)
-#add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+target_link_libraries(${TEST_NAME} PRIVATE ${PKG_DEPENDS} doctest jolly)
+add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 
 if (DISCOVER_TESTS)
     # Include doctest cmake module
