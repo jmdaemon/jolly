@@ -55,3 +55,11 @@ std::string prompt(std::string prompt) {
     return input;
   return input;
 }
+
+/** Parse a datetime string according to any arbitrary datetime format */
+std::tm parse_datetime(std::string datetime, std::string format) {
+  std::tm tm = {};
+  std::stringstream ss(datetime);
+  ss >> std::get_time(&tm, format.c_str());
+  return tm;
+}
