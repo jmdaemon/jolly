@@ -45,6 +45,7 @@ set(INCLUDES_DIR ${PROJECT_SOURCE_DIR}/include)
 add_subdirectory(src)
 
 if (BUILD_TESTING AND NOT USE_AS_SUBPROJECT)
+    set(DISCOVER_TESTS TRUE)
     include(doctest)
     include(MakeTests)
     include(CTest)
