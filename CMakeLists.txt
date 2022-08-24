@@ -38,6 +38,8 @@ include(FetchContent)
 include(Utilities)
 include(Library)
 
+include(fmt)
+
 # Include header files
 set(INCLUDES_DIR ${PROJECT_SOURCE_DIR}/include)
 
