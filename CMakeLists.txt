@@ -39,7 +39,7 @@ include(Utilities)
 include(Library)
 
 # Include header files
-set(INCLUDES_DIR "${PROJECT_SOURCE_DIR}/include")
+set(INCLUDES_DIR ${PROJECT_SOURCE_DIR}/include)
 
 # Add subdirectories
 add_subdirectory(src)
