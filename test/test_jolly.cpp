@@ -3,6 +3,10 @@
 #include "jolly.h"
 #include <fmt/core.h>
 
+// Standard Library
+#include <iostream>
+#include <sstream>
+
 TEST_CASE("trim() removes whitespace from strings") { 
   std::string s1 = " left";
   std::string s2 = "right ";
@@ -21,6 +25,14 @@ TEST_CASE("unquote() removes embedded quotes in strings") {
 TEST_CASE("substitute() replaces substrings in string") { 
   std::string s = "[replace]";
   CHECK(substitute(s, "replace", "new") == "[new]");
+}
+
+TEST_CASE("prompt() can reads lines from stdin") {
+  std::istringstream iss("5");
+  std::cin.rdbuf(iss.rdbuf());
+  
+  auto result = prompt("Enter any integer: ");
+  CHECK(result == "5");
 }
 
 TEST_CASE("parse_datetime() parses datetimes") {
