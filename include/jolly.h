@@ -24,7 +24,7 @@ std::string prompt(std::string prompt);
 std::tm parse_datetime(std::string datetime, std::string format);
 
 // Macros
-#define JOLLY_HASH_FUNCTION constexpr unsigned int hash(const char *s, int off = 0) { \
+#define USE_JOLLY_HASH_FUNCTION constexpr unsigned int hash(const char *s, int off = 0) { \
     return !s[off] ? 5381 : (hash(s, off+1)*33) ^ s[off]; \
   }
 

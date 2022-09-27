@@ -52,8 +52,8 @@ TEST_CASE("parse_datetime() parses datetimes") {
 }
 
 // Macro tests
-JOLLY_HASH_FUNCTION
-TEST_CASE("JOLLY_HASH_FUNCTION expands to hash() function") {
+USE_JOLLY_HASH_FUNCTION
+TEST_CASE("USE_JOLLY_HASH_FUNCTION expands to hash() function") {
   SUBCASE("hash() create compile time unsigned integers") {
     const char* key = "value";
     unsigned int val = 0;
