@@ -55,7 +55,7 @@ endif()
 
 if (NOT USE_AS_SUBPROJECT)
     # Generate automatic docs with Doxygen
-    #include(Docs)
+    include(Docs)
 
     # Install build artifacts system-wide
     include(Install)
