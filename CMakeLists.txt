@@ -33,9 +33,6 @@ else()
 endif()
 
 # Include dependencies
-# CMake modules
-include(FetchContent)
-include(Utilities)
 include(Library)
 
 include(fmt)
@@ -52,4 +49,16 @@ if (BUILD_TESTING AND NOT USE_AS_SUBPROJECT)
     include(MakeTests)
     include(CTest)
     add_subdirectory(test)
+endif()
+
+if (NOT USE_AS_SUBPROJECT)
+    # Generate automatic docs with Doxygen
+    #include(Docs)
+
+    # Install build artifacts system-wide
+    include(Install)
+
+    # Packages
+    include(InstallRequiredSystemLibraries)
+    include(Debian)
 endif()
