@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project(
     jolly
-    VERSION 0.4.0
+    VERSION 0.5.0
     DESCRIPTION "Joseph Diza's open source library" 
     LANGUAGES C CXX)
 
