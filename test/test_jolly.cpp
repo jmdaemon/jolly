@@ -1,7 +1,9 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "jolly.h"
-#include <fmt/core.h>
+//#include <fmt/core.h>
+#include <spdlog/fmt/fmt.h>
+#include <spdlog/fmt/bundled/core.h>
 
 // Standard Library
 #include <iostream>

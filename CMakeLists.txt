@@ -12,6 +12,9 @@ if (NOT USE_AS_SUBPROJECT)
     set(BUILD_DOC ON CACHE INTERNAL "Build documentation")
     set(ENABLE_LOGGING OFF CACHE INTERNAL "View the logging statements/debug info")
     set(LOG_LEVEL 0 CACHE INTERNAL "Enable only specific log levels")
+
+    # Enable compilation with spdlog macros by default
+    set(COMPILE_SPDLOG_MACROS TRUE CACHE INTERNAL "Enable useful spdlog macros")
 endif()
 
 # Require out-of-source builds
@@ -35,7 +38,15 @@ endif()
 # Include dependencies
 include(Library)
 
-include(fmt)
+#include(fmt)
+include(spdlog)
+
+# Optional modules
+#if (COMPILE_SPDLOG_MACROS)
+    #include(spdlog)
+#else()
+    ## No-op
+#endif()
 
 # Include header files
 set(INCLUDES_DIR ${PROJECT_SOURCE_DIR}/include)
