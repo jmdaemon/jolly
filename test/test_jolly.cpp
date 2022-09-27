@@ -50,3 +50,17 @@ TEST_CASE("parse_datetime() parses datetimes") {
     CHECK(asctime(&tm) != NULL);
   }
 }
+
+// Macro tests
+JOLLY_HASH_FUNCTION
+TEST_CASE("JOLLY_HASH_FUNCTION expands to hash() function") {
+  SUBCASE("hash() create compile time unsigned integers") {
+    const char* key = "value";
+    unsigned int val = 0;
+    switch(hash(key)) {
+      case hash("value"):
+        val = 1;
+        CHECK(val == 1);
+    }
+  }
+}

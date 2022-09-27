@@ -22,4 +22,10 @@ std::string substitute(std::string str, const std::string& from, const std::stri
 // Misc
 std::string prompt(std::string prompt);
 std::tm parse_datetime(std::string datetime, std::string format);
+
+// Macros
+#define JOLLY_HASH_FUNCTION constexpr unsigned int hash(const char *s, int off = 0) { \
+    return !s[off] ? 5381 : (hash(s, off+1)*33) ^ s[off]; \
+  }
+
 #endif // JOLLY_H
