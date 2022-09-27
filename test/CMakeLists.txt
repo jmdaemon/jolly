@@ -16,8 +16,7 @@ if (COMPILE_SPDLOG_MACROS)
     target_include_directories(${TEST_NAME} PUBLIC ${HEADERS})
     target_link_libraries(${TEST_NAME} PRIVATE ${PKG_DEPENDS} doctest fmt spdlog)
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-else()
-    # No-op
+else() # No-op
 endif()
 
 if (DISCOVER_TESTS)

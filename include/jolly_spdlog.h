@@ -7,10 +7,6 @@
   * https://stackoverflow.com/questions/30400286/logging-from-library-with-spdlog
   * https://github.com/gabime/spdlog/issues/1224 */
 
-// Functions
-//void disable_spdlog_macro_logging();
-//void init_spdlog_dynamic_logging(int verbose);
-
 /** Disables spdlog macro logging statements
   * Note that this function is used internally and you should not really be using this. */
 void disable_spdlog_macro_logging() {

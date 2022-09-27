@@ -37,16 +37,7 @@ endif()
 
 # Include dependencies
 include(Library)
-
-#include(fmt)
 include(spdlog)
-
-# Optional modules
-#if (COMPILE_SPDLOG_MACROS)
-    #include(spdlog)
-#else()
-    ## No-op
-#endif()
 
 # Include header files
 set(INCLUDES_DIR ${PROJECT_SOURCE_DIR}/include)
